@@ -1,0 +1,21 @@
+@use '@angular/material' as mat;
+
+// Scope all Material M3 CSS variables to the custom element host.
+// This prevents the theme from leaking into whatever page loads this bundle.
+sample-ui {
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+
+  color-scheme: light;
+  display: block;
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+}
